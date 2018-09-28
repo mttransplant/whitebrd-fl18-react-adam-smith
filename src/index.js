@@ -23,30 +23,6 @@ let updatedCourse = {
 ReactDom.render(
     <div>
         <h1>hello there</h1>
-        {
-            console.log(myCourses.findAllCourses())
-        }
-        {
-            myCourses.createCourse(newCourse)
-        }
-        {
-            console.log(myCourses.findAllCourses()[2].title)
-        }
-        {
-            console.log(myCourses.findCourseById("234"))
-        }
-        {
-            myCourses.updateCourse("345",updatedCourse)
-        }
-        {
-            console.log(myCourses.findAllCourses()[2].title)
-        }
-        {
-            myCourses.deleteCoruse("234")
-        }
-        {
-            console.log((myCourses.findAllCourses()))
-        }
     </div>,
     document.getElementById('root')
 )
