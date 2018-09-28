@@ -64,3 +64,25 @@ let courses = [
         "modules": []
     }
 ]
+
+export default class CourseService {
+    createCourse = course => {
+
+    }
+
+    findAllCourses = () => {
+        return courses;
+    }
+
+    findCourseById = id => {
+
+    }
+
+    updateCourse = (id, course) => {
+
+    }
+
+    deleteCoruse = id => {
+
+    }
+}
