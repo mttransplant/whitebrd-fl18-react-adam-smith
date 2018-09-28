@@ -41,6 +41,12 @@ ReactDom.render(
         {
             console.log(myCourses.findAllCourses()[2].title)
         }
+        {
+            myCourses.deleteCoruse("234")
+        }
+        {
+            console.log((myCourses.findAllCourses()))
+        }
     </div>,
     document.getElementById('root')
 )
