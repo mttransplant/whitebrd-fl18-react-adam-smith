@@ -67,7 +67,7 @@ let courses = [
 
 export default class CourseService {
     createCourse = course => {
-
+        courses.push(course)
     }
 
     findAllCourses = () => {
