@@ -22,6 +22,9 @@ ReactDom.render(
         {
             console.log(myCourses.findAllCourses())
         }
+        {
+            console.log(myCourses.findCourseById("234"))
+        }
     </div>,
     document.getElementById('root')
 )

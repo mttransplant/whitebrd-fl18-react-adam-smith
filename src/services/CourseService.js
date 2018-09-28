@@ -74,8 +74,10 @@ export default class CourseService {
         return courses;
     }
 
-    findCourseById = id => {
-
+    findCourseById = courseId => {
+        return courses.find((course) => {
+            return course.id === courseId
+        })
     }
 
     updateCourse = (id, course) => {
