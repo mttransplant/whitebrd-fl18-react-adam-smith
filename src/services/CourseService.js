@@ -80,8 +80,12 @@ export default class CourseService {
         })
     }
 
-    updateCourse = (id, course) => {
-
+    updateCourse = (courseId, course) => {
+        for (var i in courses) {
+            if (courses[i].id === courseId) {
+                courses[i] = course
+            }
+        }
     }
 
     deleteCoruse = id => {

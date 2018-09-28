@@ -9,6 +9,16 @@ let newCourse =     {
     "title": "CS5400",
     "modules": []
 }
+let updatedCourse = {
+    "id": "345",
+    "title": "CS5400 - Special Topics",
+    "modules": [
+        {
+            "id": "987",
+            "title": "just a test"
+        }
+    ]
+}
 
 ReactDom.render(
     <div>
@@ -20,10 +30,16 @@ ReactDom.render(
             myCourses.createCourse(newCourse)
         }
         {
-            console.log(myCourses.findAllCourses())
+            console.log(myCourses.findAllCourses()[2].title)
         }
         {
             console.log(myCourses.findCourseById("234"))
+        }
+        {
+            myCourses.updateCourse("345",updatedCourse)
+        }
+        {
+            console.log(myCourses.findAllCourses()[2].title)
         }
     </div>,
     document.getElementById('root')
