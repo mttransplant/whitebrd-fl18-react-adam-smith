@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import CourseService from "../services/CourseService"
-import CourseTable from "./containers/CourseTable"
+import CourseTable from "./CourseTable"
 
 export default class WhiteBoard extends Component {
     constructor(props) {
@@ -10,5 +10,12 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         }
     }
-
+    render() {
+        return(
+            <div>
+                <CourseTable
+                    courses={this.state.courses}/>
+            </div>
+        )
+    }
 }
