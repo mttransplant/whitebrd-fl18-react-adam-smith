@@ -1,5 +1,7 @@
 import React from "react";
 
+// TODO: Add link on Plus Circles to create course
+
 const CourseNav = () =>
     <div>
         <nav className="navbar fixed-top navbar-expand-md text-white navbar-dark bg-primary justify-content-start">

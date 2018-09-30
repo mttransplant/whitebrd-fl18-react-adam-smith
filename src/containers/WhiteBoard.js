@@ -5,9 +5,6 @@ import CourseTable from "./CourseTable"
 import CourseGrid from "./CourseGrid"
 import "./WhiteBoard.style.client.css"
 
-
-// TODO: Add link on Plus Circles to create course
-
 export default class WhiteBoard extends Component {
     constructor(props) {
         super(props);
