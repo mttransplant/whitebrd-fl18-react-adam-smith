@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {Route} from 'react-router-dom'
+import ModuleList from "../components/ModuleList";
 
 export default class CourseEditor extends Component {
     constructor(props) {
@@ -20,8 +21,7 @@ export default class CourseEditor extends Component {
             <div>
                 <div className="row">
                     <div className="col-4">
-                        <h2>{this.state.course.title}</h2>
-                        <p>Module List</p>
+                        <ModuleList course={this.state.course}/>
                     </div>
                     <div className="col-8">Lesson Tabs</div>
                 </div>
