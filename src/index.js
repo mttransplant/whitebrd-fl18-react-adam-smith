@@ -6,7 +6,6 @@ import WhiteBoard from "./containers/WhiteBoard";
 
 ReactDom.render(
     <div>
-        <h1>hello there</h1>
         <WhiteBoard/>
     </div>,
     document.getElementById('root')

@@ -2,6 +2,8 @@
     {
         "id": "123",
         "title": "CS5610",
+        "ownedBy": "me",
+        "lastModified": "9/30/18",
         "modules": [
             {
                 "title": "Week 1",
@@ -61,6 +63,8 @@
     {
         "id": "234",
         "title": "CS5200",
+        "ownedBy": "me",
+        "lastModified": "9/30/18",
         "modules": [
             {
                 "id": "345",
@@ -85,6 +89,8 @@
     {
         "id": "345",
         "title": "Course 3",
+        "ownedBy": "me",
+        "lastModified": "9/30/18",
         "modules": [
             {
                 "id": "567",
@@ -98,6 +104,8 @@
     },
     {
         "id": "456",
-        "title": "Course 4"
+        "title": "Course 4",
+        "ownedBy": "me",
+        "lastModified": "9/30/18"
     }
 ]

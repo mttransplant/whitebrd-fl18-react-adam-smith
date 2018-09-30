@@ -1,0 +1,36 @@
+.btn-btm-rt{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.fa-plus-circle {
+    color: red;
+}
+
+.field-new-course {
+    background-color: lightcyan;
+    border-color: lightcyan;
+}
+
+input::placeholder {
+    color: white;
+    font-style: italic;
+}
+
+.nav-pad {
+    padding-top: 65px;
+}
+
+body {
+    background: lightgray !important;
+}
+
+.fa-bars {
+    color: white !important;
+}
+
+.secondary-header {
+    height: 50px;
+    box-shadow: 3px 3px grey;
+}
