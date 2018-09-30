@@ -22,7 +22,7 @@ input::placeholder {
     padding-top: 65px;
 }
 
-body {
+.bg-grey {
     background: lightgray !important;
 }
 

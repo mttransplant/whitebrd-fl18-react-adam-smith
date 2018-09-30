@@ -1,4 +1,5 @@
 import React from "react";
+import "./CourseNav.style.client.css"
 
 // TODO: Add link on Plus Circles to create course
 

@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import CourseService from "../services/CourseService"
 import CourseTable from "./CourseTable"
 import CourseGrid from "./CourseGrid"
-import "./WhiteBoard.style.client.css"
+import CourseEditor from "./CourseEditor"
 
 export default class WhiteBoard extends Component {
     constructor(props) {
@@ -33,7 +33,12 @@ export default class WhiteBoard extends Component {
                                render={() =>
                                    <CourseGrid
                                        courses={this.state.courses}/>}/>
-
+                        <Route exact
+                               path="/course/:courseId/edit"
+                               render={(props) =>
+                                   <CourseEditor
+                                       {...props}
+                                       courses={this.state.courses}/>}/>
 
                     </div>
 

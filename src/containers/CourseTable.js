@@ -5,7 +5,7 @@ import CourseNav from '../components/CourseNav'
 
 const CourseTable = ({courses}) =>
     // DONE: build out add new course header
-    <div>
+    <div className="bg-grey">
         <CourseNav/>
         <div className="nav-pad">
             <table className="table">

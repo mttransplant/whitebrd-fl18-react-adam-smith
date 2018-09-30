@@ -4,7 +4,7 @@ import CourseNav from '../components/CourseNav'
 import CourseCard from "../components/CourseCard";
 
 const CourseGrid = ({courses}) =>
-    <div>
+    <div className="bg-grey">
         <CourseNav/>
         <div className="nav-pad">
             <table className="table">
