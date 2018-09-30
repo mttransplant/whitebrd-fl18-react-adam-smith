@@ -15,5 +15,8 @@ const CourseNav = () =>
                         <i className="fa fa-plus-circle fa-stack-2x"/>
                     </span>
         </nav>
+        <div id="addButton" className="btn-btm-rt">
+            <span className="fa fa-plus-circle fa-3x"></span>
+        </div>
     </div>
 export default CourseNav
