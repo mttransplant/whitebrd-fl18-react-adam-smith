@@ -1,7 +1,7 @@
 import React from 'react'
 import CourseRow from '../components/CourseRow'
 
-const CourseTable = ({courses}) => {
+const CourseTable = ({courses}) =>
     <div>
         {/*TODO: build out add new course header*/}
         <table className="table">
@@ -17,5 +17,5 @@ const CourseTable = ({courses}) => {
             </tbody>
         </table>
     </div>
-}
+
 export default CourseTable
