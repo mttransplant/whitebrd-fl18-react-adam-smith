@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import CourseService from "../services/CourseService"
 import CourseTable from "./CourseTable"
+import CourseGrid from "./CourseGrid"
 import "./WhiteBoard.style.client.css"
 
 
