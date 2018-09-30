@@ -107,5 +107,17 @@
         "title": "Course 4",
         "ownedBy": "me",
         "lastModified": "9/30/18"
+    },
+    {
+        "id": "567",
+        "title": "Course 5",
+        "ownedBy": "me",
+        "lastModified": "9/30/18"
+    },
+    {
+        "id": "678",
+        "title": "Course 6",
+        "ownedBy": "me",
+        "lastModified": "9/30/18"
     }
 ]

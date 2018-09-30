@@ -2,10 +2,10 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import CourseNav from '../components/CourseNav'
 import CourseRow from "../components/CourseRow";
+import CourseCard from "../components/CourseCard";
 
 const CourseGrid = ({courses}) =>
     <div>
-        {/*<h1>CourseGrid {courses.length}</h1>*/}
         <CourseNav/>
         <div className="nav-pad">
             <table className="table">
@@ -20,17 +20,16 @@ const CourseGrid = ({courses}) =>
                 </span>
                 </th>
                 </thead>
-                {/*<tbody>*/}
-                {/*{*/}
-                    {/*courses.map((course, index) =>*/}
-                        {/*(*/}
-                            {/*<CourseRow*/}
-                                {/*key={index}*/}
-                                {/*course={course}/>*/}
-                        {/*))*/}
-                {/*}*/}
-                {/*</tbody>*/}
             </table>
+        </div>
+        <div className="container-fluid card-deck">
+            <div className="row">
+                {courses.map((course, index) => (
+                    <CourseCard
+                        key={index}
+                        course={course}/>
+                ))}
+            </div>
         </div>
     </div>
 export default CourseGrid
