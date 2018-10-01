@@ -33,6 +33,12 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         })
     }
+    deleteCourse = (courseId) => {
+        this.courseService.deleteCoruse(courseId)
+        this.setState({
+            courses:this.courseService.findAllCourses()
+        })
+    }
 
     render() {
         return(
@@ -43,16 +49,19 @@ export default class WhiteBoard extends Component {
                                path="/"
                                render={() =>
                                    <CourseTable
+                                       deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>
                                }/>
                         <Route path="/course/table"
                                render={() =>
                                    <CourseTable
+                                       deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>
                                }/>
                         <Route path="/course/grid"
                                render={() =>
                                    <CourseGrid
+                                       deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>}/>
                         <Route exact
                                path="/course/:courseId/edit"

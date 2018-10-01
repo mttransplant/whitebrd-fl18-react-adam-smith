@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import CourseRow from '../components/CourseRow'
 import CourseNav from '../components/CourseNav'
 
-const CourseTable = ({courses}) =>
+const CourseTable = ({courses, deleteCourse}) =>
     // DONE: build out add new course header
     <div className="bg-grey">
         <CourseNav/>
@@ -27,6 +27,7 @@ const CourseTable = ({courses}) =>
                     courses.map((course, index) =>
                         (
                             <CourseRow
+                                deleteCourse={deleteCourse}
                                 key={index}
                                 course={course}/>
                         ))
