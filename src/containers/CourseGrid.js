@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom'
 import CourseNav from '../components/CourseNav'
 import CourseCard from "../components/CourseCard";
 
-const CourseGrid = ({courses}) =>
+const CourseGrid = ({courses, createCourse}) =>
     <div className="bg-grey">
-        <CourseNav/>
+        <CourseNav
+            createCourse={createCourse}/>
         <div className="nav-pad">
             <table className="table">
                 <thead className="thead-light secondary-header">

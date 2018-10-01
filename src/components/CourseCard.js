@@ -11,7 +11,7 @@ const CourseCard = ({course}) =>
                 <h5 className="card-title">{course.title}</h5>
                 <p className="card-text">{course.ownedBy}</p>
                 {/*TODO: direct link to course editor*/}
-                <Link to="#" className="btn btn-primary">More…</Link>
+                <Link to={"/course/"+course.id+"/edit"} className="btn btn-primary">More…</Link>
             </div>
         </div>
     </div>
