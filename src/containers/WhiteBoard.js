@@ -13,7 +13,16 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         }
     }
-
+    createCourse = title => {
+        const newCourse = {
+            title: title,
+            id: (new Date()).getTime().toString()
+        }
+        this.courseService.createCourse(newCourse)
+        this.setState({
+            courses:this.courseService.findAllCourses()
+        })
+    }
     deleteModule = module => {
         this.courseService.deleteModule(module)
         this.setState({
@@ -49,18 +58,21 @@ export default class WhiteBoard extends Component {
                                path="/"
                                render={() =>
                                    <CourseTable
+                                       createCourse={this.createCourse}
                                        deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>
                                }/>
                         <Route path="/course/table"
                                render={() =>
                                    <CourseTable
+                                       createCourse={this.createCourse}
                                        deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>
                                }/>
                         <Route path="/course/grid"
                                render={() =>
                                    <CourseGrid
+                                       createCourse={this.createCourse}
                                        deleteCourse={this.deleteCourse}
                                        courses={this.state.courses}/>}/>
                         <Route exact

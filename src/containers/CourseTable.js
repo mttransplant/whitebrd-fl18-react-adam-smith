@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom'
 import CourseRow from '../components/CourseRow'
 import CourseNav from '../components/CourseNav'
 
-const CourseTable = ({courses, deleteCourse}) =>
+const CourseTable = ({courses, deleteCourse, createCourse}) =>
     // DONE: build out add new course header
     <div className="bg-grey">
-        <CourseNav/>
+        <CourseNav
+            createCourse={createCourse}/>
         <div className="nav-pad">
             <table className="table">
                 <thead className="thead-light secondary-header">
