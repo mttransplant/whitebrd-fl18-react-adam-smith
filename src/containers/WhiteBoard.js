@@ -27,6 +27,12 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         })
     }
+    addLesson = (moduleId,lesson) => {
+        this.courseService.addLesson(moduleId,lesson)
+        this.setState({
+            courses: this.courseService.findAllCourses()
+        })
+    }
 
     render() {
         return(
@@ -53,6 +59,7 @@ export default class WhiteBoard extends Component {
                                render={(props) =>
                                    <CourseEditor
                                        {...props}
+                                       addLesson={this.addLesson}
                                        updateModules={this.updateModules}
                                        deleteModule={this.deleteModule}
                                        courses={this.state.courses}/>}/>

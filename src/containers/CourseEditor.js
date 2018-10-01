@@ -35,6 +35,22 @@ export default class CourseEditor extends Component {
         })
     }
 
+    addLesson = () => {
+        let lesson = {
+            title: "New Lesson",
+            id: (new Date()).getTime().toString()
+        }
+        // var newModule = this.state.selectedModule
+        // newModule.lessons.push(lesson)
+        this.props.addLesson(this.state.selectedModule.id,lesson)
+        this.setState({
+            // selectedModule: newModule
+            selectedLesson: lesson
+        })
+
+
+    }
+
     render() {
         return(
             <div>
@@ -42,12 +58,11 @@ export default class CourseEditor extends Component {
 
                     <Link to="/course/table" className="col-1 btn btn-dark nav-item fa fa-times fa-2x"/>
                     <h3 className="nav-item col-3 my-1">{this.state.course.title}</h3>
-                    {console.log(this.state.selectedModule.lessons)}
                     <LessonTabs
-
                         selectedModule = {this.state.selectedModule}
                         selectedLesson = {this.state.selectedLesson}
-                        selectLesson = {this.selectLesson}/>
+                        selectLesson = {this.selectLesson}
+                        addLesson = {this.addLesson}/>
                 </nav>
                 <div className="row">
                     <div className="col-4">

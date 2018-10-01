@@ -47,4 +47,14 @@ export default class CourseService {
             }
         }
     }
+
+    addLesson = (moduleId,lesson) => {
+        for (var i in courses) {
+            for (var j in courses[i].modules) {
+                if (courses[i].modules[j].id === moduleId) {
+                    courses[i].modules[j].lessons.push(lesson)
+                }
+            }
+        }
+    }
 }
