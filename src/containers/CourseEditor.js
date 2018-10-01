@@ -39,10 +39,12 @@ export default class CourseEditor extends Component {
         return(
             <div>
                 <nav className="navbar fixed-top text-white bg-dark navbar-dark justify-content-start">
-                    <Link to="/course/table" className="btn btn-dark"><h4>X</h4></Link>
+                    <Link to="/course/table" className="btn btn-dark nav-item"><h4>X</h4></Link>
                     <h4>{this.state.course.title}</h4>
+                    {console.log(this.state.selectedModule.lessons)}
                     <LessonTabs
-                        lessons = {this.state.selectedModule.lessons}
+
+                        selectedModule = {this.state.selectedModule}
                         selectedLesson = {this.state.selectedLesson}
                         selectLesson = {this.selectLesson}/>
                 </nav>
