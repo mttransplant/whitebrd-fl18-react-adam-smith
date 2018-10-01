@@ -31,7 +31,7 @@ export default class CourseEditor extends Component {
     selectModule = module => {
         this.setState({
             selectedModule: module,
-            selectedLesson: module.lessons[0]
+            selectedLesson: this.state.selectedModule.lessons[0]
         })
     }
 
@@ -39,8 +39,9 @@ export default class CourseEditor extends Component {
         return(
             <div>
                 <nav className="navbar fixed-top text-white bg-dark navbar-dark justify-content-start">
-                    <Link to="/course/table" className="btn btn-dark nav-item"><h4>X</h4></Link>
-                    <h4>{this.state.course.title}</h4>
+
+                    <Link to="/course/table" className="col-1 btn btn-dark nav-item fa fa-times fa-2x"/>
+                    <h3 className="nav-item col-3 my-1">{this.state.course.title}</h3>
                     {console.log(this.state.selectedModule.lessons)}
                     <LessonTabs
 
@@ -58,7 +59,7 @@ export default class CourseEditor extends Component {
                             updateModules={this.props.updateModules}/>
                     </div>
                     <div className="col-8">
-                        <LessonTabs/>
+                        {/*<LessonTabs/>*/}
                     </div>
                 </div>
             </div>
