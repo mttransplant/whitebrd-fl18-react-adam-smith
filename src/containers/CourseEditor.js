@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {Link, Route} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import ModuleList from "../components/ModuleList";
 import LessonTabs from "../components/LessonTabs";
 

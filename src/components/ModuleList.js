@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import CourseRow from "./CourseRow";
+// import {Link} from 'react-router-dom'
+// import CourseRow from "./CourseRow";
 import ModuleListItem from "./ModuleListItem";
 
 export default class ModuleList extends Component {
@@ -10,7 +10,7 @@ export default class ModuleList extends Component {
 
         this.state = {
             course: course,
-            newModuleName: "",
+            newModuleName: "New Module",
             modules: course.modules
         }
     }
@@ -29,7 +29,7 @@ export default class ModuleList extends Component {
         }
         modules.push(module)
         this.setState({
-            newModuleName: "",
+            newModuleName: "New Module",
             modules: modules
         })
         this.props.updateModules(this.state.course.id,modules)

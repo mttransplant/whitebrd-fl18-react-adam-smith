@@ -10,15 +10,17 @@ const CourseTable = ({courses}) =>
         <div className="nav-pad">
             <table className="table">
                 <thead className="thead-light secondary-header">
-                <th scope="col">Title</th>
-                <th className="d-none d-sm-table-cell" scope="col">Owned by</th>
-                <th className="d-none d-sm-table-cell" scope="col">Last Modified</th>
-                <th scope="col">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th className="d-none d-sm-table-cell" scope="col">Owned by</th>
+                    <th className="d-none d-sm-table-cell" scope="col">Last Modified</th>
+                    <th scope="col">
                 <span className="pull-right">
                     <Link to="/course/grid" className="fas fa-grip-horizontal">grid</Link>
                     <i className="mx-1 fas fa-sort-alpha-down">sort</i>
                 </span>
-                </th>
+                    </th>
+                </tr>
                 </thead>
                 <tbody>
                 {
