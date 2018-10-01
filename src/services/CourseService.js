@@ -1,6 +1,6 @@
 import stockCourses from "./courses"
 
-let courses = stockCourses
+var courses = stockCourses
 
 export default class CourseService {
     createCourse = course => {
@@ -29,5 +29,22 @@ export default class CourseService {
         courses = courses.filter((course) =>
             course.id !== courseId
         )
+    }
+
+    deleteModule = moduleToDelete => {
+        courses = courses.map(course => {
+            course.modules = course.modules.filter(
+                module => module !== moduleToDelete
+            )
+            return course;
+        })
+    }
+
+    updateModules = (courseId, modules) => {
+        for (var i in courses) {
+            if (courses[i].id === courseId) {
+                courses[i].modules = modules
+            }
+        }
     }
 }

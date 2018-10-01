@@ -106,18 +106,48 @@
         "id": "456",
         "title": "Course 4",
         "ownedBy": "me",
-        "lastModified": "9/30/18"
+        "lastModified": "9/30/18",
+        "modules": [
+            {
+                "id": "789",
+                "title": "Module 4 1"
+            },
+            {
+                "id": "890",
+                "title": "Module 4 2"
+            }
+        ]
     },
     {
         "id": "567",
         "title": "Course 5",
         "ownedBy": "me",
-        "lastModified": "9/30/18"
+        "lastModified": "9/30/18",
+        "modules": [
+            {
+                "id": "901",
+                "title": "Module 5 1"
+            },
+            {
+                "id": "012",
+                "title": "Module 5 2"
+            }
+        ]
     },
     {
         "id": "678",
         "title": "Course 6",
         "ownedBy": "me",
-        "lastModified": "9/30/18"
+        "lastModified": "9/30/18",
+        "modules": [
+            {
+                "id": "013",
+                "title": "Module 6 1"
+            },
+            {
+                "id": "014",
+                "title": "Module 6 2"
+            }
+        ]
     }
 ]
