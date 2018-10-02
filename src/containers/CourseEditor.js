@@ -13,6 +13,7 @@ export default class CourseEditor extends Component {
         const course = this.props.courses.find(
             course => course.id === courseId
         );
+        this.checkStructure(course)
         const selectedModule = course.modules[0];
         const selectedLesson = selectedModule.lessons[0];
 
@@ -23,6 +24,14 @@ export default class CourseEditor extends Component {
         }
     }
 
+    checkStructure = course => {
+        if (course.hasOwnProperty("modules")) {
+            console.log("this course has modules")
+        }
+        if (!course.hasOwnProperty("modules")) {
+            console.log("this course Doesn't have modules")
+        }
+    }
     selectLesson = lesson =>
         this.setState({
             selectedLesson: lesson
@@ -47,8 +56,6 @@ export default class CourseEditor extends Component {
             // selectedModule: newModule
             selectedLesson: lesson
         })
-
-
     }
 
     render() {
