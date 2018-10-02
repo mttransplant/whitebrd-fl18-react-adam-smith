@@ -42,6 +42,12 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         })
     }
+    addTopic = (lessonId, topic) => {
+        this.courseService.addTopic(lessonId, topic)
+        this.setState({
+            courses: this.courseService.findAllCourses()
+        })
+    }
     deleteCourse = (courseId) => {
         this.courseService.deleteCoruse(courseId)
         this.setState({
@@ -81,6 +87,7 @@ export default class WhiteBoard extends Component {
                                    <CourseEditor
                                        {...props}
                                        addLesson={this.addLesson}
+                                       addTopic={this.addTopic}
                                        updateModules={this.updateModules}
                                        deleteModule={this.deleteModule}
                                        courses={this.state.courses}/>}/>

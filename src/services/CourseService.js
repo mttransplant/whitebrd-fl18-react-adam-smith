@@ -51,7 +51,7 @@ export default class CourseService {
     addModule = (courseId,module) => {
         for (var i in courses) {
                 if (courses[i].id === courseId) {
-                    courses[i]["modules"]=module
+                    courses[i].modules.push(module)
                 }
         }
     }
@@ -60,7 +60,19 @@ export default class CourseService {
         for (var i in courses) {
             for (var j in courses[i].modules) {
                 if (courses[i].modules[j].id === moduleId) {
-                    courses[i].modules[j]["lessons"]=lesson
+                    courses[i].modules[j].lessons.push(lesson)
+                }
+            }
+        }
+    }
+
+    addTopic = (lessonId,topic) => {
+        for (var i in courses) {
+            for (var j in courses[i].modules) {
+                for (var k in courses[i].modules[j].lessons) {
+                    if (courses[i].modules[j].lessons[k].id === lessonId) {
+                        courses[i].modules[j].lessons[k].topics.push(topic)
+                    }
                 }
             }
         }

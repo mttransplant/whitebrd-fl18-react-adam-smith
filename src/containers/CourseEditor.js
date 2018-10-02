@@ -16,9 +16,9 @@ export default class CourseEditor extends Component {
         );
 
         const selectedModule = course.hasOwnProperty("modules") ? course.modules[0] : {modules:[]};
-        console.log(selectedModule)
+        // console.log(selectedModule)
         const selectedLesson = selectedModule.hasOwnProperty("lessons") ? selectedModule.lessons[0] : {lessons:[]};
-        console.log(selectedLesson)
+        // console.log(selectedLesson)
         const selectedTopic = selectedLesson.topics[0]
         this.state = {
             course: course,
@@ -47,6 +47,11 @@ export default class CourseEditor extends Component {
     selectLesson = lesson =>
         this.setState({
             selectedLesson: lesson
+        })
+
+    selectTopic = topic =>
+        this.setState({
+            selectedTopic: topic
         })
 
     selectModule = module => {
@@ -94,14 +99,14 @@ export default class CourseEditor extends Component {
         // var newModule = this.state.selectedModule
         // newModule.lessons.push(lesson)
         this.props.addLesson(this.state.selectedModule.id,newLesson)
-        let newCourse = this.props.courses.find(
-            course => course.id === this.courseId
-        );
-        let newModule = newCourse.modules[0];
-        newLesson = newModule.lessons[0];
+        // let newCourse = this.props.courses.find(
+        //     course => course.id === this.courseId
+        // );
+        // let newModule = newCourse.modules[0];
+        // newLesson = newModule.lessons[0];
         this.setState({
-            course: newCourse,
-            selectedModule: newModule,
+            // course: newCourse,
+            // selectedModule: newModule,
             selectedLesson: newLesson
         })
     }
@@ -111,16 +116,17 @@ export default class CourseEditor extends Component {
             id: (new Date()).getTime().toString(),
             widgets: []
         }
-        this.props.addTopic(this.state.selectedModule.lessons.id,newTopic)
-        let newCourse = this.props.courses.find(
-            course => course.id === this.courseId
-        );
-        let newModule = newCourse.modules[0];
-        let newLesson = newModule.lessons[0];
+        this.props.addTopic(this.state.selectedLesson.id,newTopic)
+        // let newCourse = this.props.courses.find(
+        //     course => course.id === this.courseId
+        // );
+        // let newModule = newCourse.modules[0];
+        // let newLesson = newModule.lessons[0];
         this.setState({
-            course: newCourse,
-            selecteModule: newModule,
-            selectedLesson: newLesson
+            // course: newCourse,
+            // selecteModule: newModule,
+            // selectedLesson: newLesson
+            selectedTopic: newTopic
         })
     }
 
