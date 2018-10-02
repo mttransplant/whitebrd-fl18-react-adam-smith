@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {Link} from 'react-router-dom'
 import ModuleList from "../components/ModuleList";
 import LessonTabs from "../components/LessonTabs";
+import TopicPills from "../components/TopicPills";
 
 //Note: Much of this is from https://github.com/jannunzi/webdev-fall-2018/blob/master/src/components/CourseEditor.js
 
@@ -18,10 +19,12 @@ export default class CourseEditor extends Component {
         console.log(selectedModule)
         const selectedLesson = selectedModule.hasOwnProperty("lessons") ? selectedModule.lessons[0] : {lessons:[]};
         console.log(selectedLesson)
+        const selectedTopic = selectedLesson.topics[0]
         this.state = {
             course: course,
             selectedModule: selectedModule,
-            selectedLesson: selectedLesson
+            selectedLesson: selectedLesson,
+            selectedTopic: selectedTopic
         }
         this.checkStructure(course)
     }
@@ -144,7 +147,11 @@ export default class CourseEditor extends Component {
                             updateModules={this.props.updateModules}/>
                     </div>
                     <div className="col-8">
-                        {/*<LessonTabs/>*/}
+                        <TopicPills
+                            selectedLesson = {this.state.selectedLesson}
+                            selectedTopic={this.state.selectedTopic}
+                            selectTopic={this.selectTopic}
+                            addTopic = {this.addTopic}/>
                     </div>
                 </div>
             </div>
