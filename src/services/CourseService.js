@@ -48,11 +48,19 @@ export default class CourseService {
         }
     }
 
+    addModule = (courseId,module) => {
+        for (var i in courses) {
+                if (courses[i].id === courseId) {
+                    courses[i]["modules"]=module
+                }
+        }
+    }
+
     addLesson = (moduleId,lesson) => {
         for (var i in courses) {
             for (var j in courses[i].modules) {
                 if (courses[i].modules[j].id === moduleId) {
-                    courses[i].modules[j].lessons.push(lesson)
+                    courses[i].modules[j]["lessons"]=lesson
                 }
             }
         }

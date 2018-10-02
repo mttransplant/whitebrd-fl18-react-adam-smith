@@ -13,24 +13,33 @@ export default class CourseEditor extends Component {
         const course = this.props.courses.find(
             course => course.id === courseId
         );
-        this.checkStructure(course)
-        const selectedModule = course.modules[0];
-        const selectedLesson = selectedModule.lessons[0];
 
+        const selectedModule = course.hasOwnProperty("modules") ? course.modules[0] : {modules:[]};
+        console.log(selectedModule)
+        const selectedLesson = selectedModule.hasOwnProperty("lessons") ? selectedModule.lessons[0] : {lessons:[]};
+        console.log(selectedLesson)
         this.state = {
             course: course,
             selectedModule: selectedModule,
             selectedLesson: selectedLesson
         }
+        this.checkStructure(course)
     }
 
     checkStructure = course => {
-        if (course.hasOwnProperty("modules")) {
-            console.log("this course has modules")
-        }
         if (!course.hasOwnProperty("modules")) {
-            console.log("this course Doesn't have modules")
+            console.log(course.title+": this course Doesn't have modules")
+            this.addModule()
         }
+        if (!course.modules[0].hasOwnProperty("lessons")) {
+            console.log(course.modules[0].title+": this module Doesn't have lessons")
+            this.addLesson()
+        }
+        // if (!course.modules[0].lessons[0].hasOwnProperty("topics")) {
+        //     console.log(course.modules[0].lessons[0].title+": this lesson doesn't have topics")
+        //     this.addTopic()
+        // }
+
     }
     selectLesson = lesson =>
         this.setState({
@@ -44,17 +53,71 @@ export default class CourseEditor extends Component {
         })
     }
 
+    addModule = () => {
+        let newModule = {
+            title: "New Module",
+            id: (new Date()).getTime().toString(),
+            lessons: [{
+                title: "New Lesson",
+                id: (new Date()).getTime().toString(),
+                topics: [{
+                    title: "New Topic",
+                    id: (new Date()).getTime().toString(),
+                    widgets: []
+                }]
+            }]
+        }
+        this.props.addModule(this.state.course.id,newModule)
+        let newCourse = this.props.courses.find(
+            course => course.id === this.courseId
+        );
+        newModule = newCourse.modules[0];
+        this.setState({
+            course: newCourse,
+            selectedModule: newModule
+        })
+    }
+
     addLesson = () => {
-        let lesson = {
+        let newLesson = {
             title: "New Lesson",
-            id: (new Date()).getTime().toString()
+            id: (new Date()).getTime().toString(),
+            topics: [{
+                title: "New Topic",
+                id: (new Date()).getTime().toString(),
+                widgets: []
+            }]
         }
         // var newModule = this.state.selectedModule
         // newModule.lessons.push(lesson)
-        this.props.addLesson(this.state.selectedModule.id,lesson)
+        this.props.addLesson(this.state.selectedModule.id,newLesson)
+        let newCourse = this.props.courses.find(
+            course => course.id === this.courseId
+        );
+        let newModule = newCourse.modules[0];
+        newLesson = newModule.lessons[0];
         this.setState({
-            // selectedModule: newModule
-            selectedLesson: lesson
+            course: newCourse,
+            selectedModule: newModule,
+            selectedLesson: newLesson
+        })
+    }
+    addTopic = () => {
+        let newTopic = {
+            title: "New Topic",
+            id: (new Date()).getTime().toString(),
+            widgets: []
+        }
+        this.props.addTopic(this.state.selectedModule.lessons.id,newTopic)
+        let newCourse = this.props.courses.find(
+            course => course.id === this.courseId
+        );
+        let newModule = newCourse.modules[0];
+        let newLesson = newModule.lessons[0];
+        this.setState({
+            course: newCourse,
+            selecteModule: newModule,
+            selectedLesson: newLesson
         })
     }
 
