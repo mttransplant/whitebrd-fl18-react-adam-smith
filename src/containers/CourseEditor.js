@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import ModuleList from "../components/ModuleList";
 import LessonTabs from "../components/LessonTabs";
 import TopicPills from "../components/TopicPills";
+import WidgetList from "../components/WidgetList";
 
 //Note: Much of this is from https://github.com/jannunzi/webdev-fall-2018/blob/master/src/components/CourseEditor.js
 
@@ -158,6 +159,8 @@ export default class CourseEditor extends Component {
                             selectedTopic={this.state.selectedTopic}
                             selectTopic={this.selectTopic}
                             addTopic = {this.addTopic}/>
+                        <br/>
+                        <WidgetList/>
                     </div>
                 </div>
             </div>
