@@ -49,7 +49,7 @@ export default class WhiteBoard extends Component {
         })
     }
     deleteCourse = (courseId) => {
-        this.courseService.deleteCoruse(courseId)
+        this.courseService.deleteCourse(courseId)
         this.setState({
             courses:this.courseService.findAllCourses()
         })

@@ -25,7 +25,7 @@ export default class CourseService {
         }
     }
 
-    deleteCoruse = courseId => {
+    deleteCourse = courseId => {
         courses = courses.filter((course) =>
             course.id !== courseId
         )
