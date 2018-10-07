@@ -105,4 +105,21 @@ export default class CourseService {
             }
         }
     }
+
+    findWidget = (widgetId) => {
+        for (var i in courses) {
+            for (var j in courses[i].modules) {
+                for (var k in courses[i].modules[j].lessons) {
+                    for (var l in courses[i].modules[j].lessons[k].topics) {
+                        for (var m in courses[i].modules[j].lessons[k].topics[l].widgets) {
+                            if (courses[i].modules[j].lessons[k].topics[l].widgets[m].id === widgetId) {
+                                return courses[i].modules[j].lessons[k].topics[l].widgets[m]
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }
