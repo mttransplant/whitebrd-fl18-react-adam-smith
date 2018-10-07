@@ -50,9 +50,9 @@ export default class CourseService {
 
     addModule = (courseId,module) => {
         for (var i in courses) {
-                if (courses[i].id === courseId) {
-                    courses[i].modules.push(module)
-                }
+            if (courses[i].id === courseId) {
+                courses[i].modules.push(module)
+            }
         }
     }
 
@@ -114,6 +114,23 @@ export default class CourseService {
                         for (var m in courses[i].modules[j].lessons[k].topics[l].widgets) {
                             if (courses[i].modules[j].lessons[k].topics[l].widgets[m].id === widgetId) {
                                 return courses[i].modules[j].lessons[k].topics[l].widgets[m]
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    updateWidget = (widgetId, widget) => {
+        for (var i in courses) {
+            for (var j in courses[i].modules) {
+                for (var k in courses[i].modules[j].lessons) {
+                    for (var l in courses[i].modules[j].lessons[k].topics) {
+                        for (var m in courses[i].modules[j].lessons[k].topics[l].widgets) {
+                            if (courses[i].modules[j].lessons[k].topics[l].widgets[m].id === widgetId) {
+                                courses[i].modules[j].lessons[k].topics[l].widgets[m] = widget
                             }
                         }
 
