@@ -72,6 +72,12 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         })
     }
+    deleteWidget = (widgetId) => {
+        this.courseService.deleteWidget(widgetId)
+        this.setState({
+            courses: this.courseService.findAllCourses()
+        })
+    }
 
     render() {
         return(
