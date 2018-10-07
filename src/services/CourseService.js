@@ -91,4 +91,18 @@ export default class CourseService {
             }
         }
     }
+
+    findWidgets = (topicId) => {
+        for (var i in courses) {
+            for (var j in courses[i].modules) {
+                for (var k in courses[i].modules[j].lessons) {
+                    for (var l in courses[i].modules[j].lessons[k].topics) {
+                        if (courses[i].modules[j].lessons[k].topics[l].id === topicId) {
+                            return courses[i].modules[j].lessons[k].topics[l].widgets
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

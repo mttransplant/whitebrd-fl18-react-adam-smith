@@ -60,6 +60,9 @@ export default class WhiteBoard extends Component {
             courses: this.courseService.findAllCourses()
         })
     }
+    findWidgets = (topicId) => {
+        this.courseService.findWidgets(topicId)
+    }
 
     render() {
         return(
