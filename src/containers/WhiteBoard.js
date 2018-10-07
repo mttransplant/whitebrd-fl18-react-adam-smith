@@ -54,6 +54,12 @@ export default class WhiteBoard extends Component {
             courses:this.courseService.findAllCourses()
         })
     }
+    createWidget = (topicId, widget) => {
+        this.courseService.createWidget(topicId, widget)
+        this.setState({
+            courses: this.courseService.findAllCourses()
+        })
+    }
 
     render() {
         return(
